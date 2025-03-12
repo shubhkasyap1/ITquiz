@@ -23,7 +23,7 @@
   }
   
   .dotbg{
-    background-image: url('./dot.png');
+    background-image: url('../../assets/dot.png');
     background-repeat: no-repeat;
     background-position-x: 30%;
     background-position-y: 250%;
@@ -43,6 +43,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    background: transparent !important;
   }
   
   .logo img {
@@ -59,7 +60,7 @@
     justify-content: center;
     flex: 1;
     padding: 2rem;
-    background-image: url("./Spiral.png");
+    background-image: url("../../assets/Spiral.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: right center;
