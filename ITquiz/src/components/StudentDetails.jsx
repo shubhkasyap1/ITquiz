@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import StudentTable from "./StudentTable";
 import AddStudent from "./Button/AddStudents";
 import EditStudent from "./Button/EditStudent";
+import { fetchStudents, deleteStudent } from "../utils/api"; // Import API functions
 
 const StudentDetails = () => {
   const [students, setStudents] = useState([]);
@@ -9,26 +10,27 @@ const StudentDetails = () => {
   const [showAddPopup, setShowAddPopup] = useState(false);
 
   useEffect(() => {
-    fetch("https://quiz-application-rgaz.onrender.com/api/v1/admin/all-users")
-      .then((response) => response.json())
-      .then((data) => {
-        setStudents(
-          data.map((user, index) => ({
-            id: `UU${index + 1}`,
-            name: user.name,
-            dob: user.dob.replace(/-/g, ""),
-          }))
-        );
-      })
-      .catch((error) => console.error("Error fetching students:", error));
+    const loadStudents = async () => {
+      try {
+        const data = await fetchStudents(); // Fetch students from API
+        setStudents(data);
+      } catch (error) {
+        console.error("Error fetching students:", error);
+      }
+    };
+
+    loadStudents();
   }, []);
 
   const handleEdit = (student) => {
     setEditingStudent(student);
   };
 
-  const handleDelete = (id) => {
-    setStudents(students.filter((student) => student.id !== id));
+  const handleDelete = async (id) => {
+    const isDeleted = await deleteStudent(id);
+    if (isDeleted) {
+      setStudents(students.filter((student) => student.id !== id));
+    }
   };
 
   const handleAddStudent = () => {

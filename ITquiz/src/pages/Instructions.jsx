@@ -32,43 +32,55 @@ const Instructions = () => {
 
   return (
     <div
-      className="container bg-primary min-h-screen flex flex-col justify-between bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${BackgroundImage})` }}
-    >
-      <StudentHeader />
-
-      {/* Main Content Section */}
-      <div className="flex flex-col lg:flex-row justify-center items-center flex-1">
-        {/* Instructions Box */}
-        <div className="bg-center flex justify-center items-center w-full p-6">
-          <div className="border-2 border-slate-600 p-6 pt-0 rounded-xl bg-secondary lg:w-[720px] shadow-lg max-h-[70vh] overflow-auto">
-            <h2 className="text-5xl font-bold text-white mb-4 mt-14 text-center">
-              Instructions
-            </h2>
-            <p className="text-gray-300 mb-6 text-lg text-center">
-              Read the instructions carefully before starting the quiz.
-            </p>
-
-            {/* Instruction Sections */}
-            <div className="bg-secondary p-8 text-white">
-              <InstructionsList title="1. General Guidelines" items={guidelines} />
-              <InstructionsList title="2. Exam Structure" />
-              {Object.entries(examStructure).map(([section, points], index) => (
-                <InstructionsList key={index} title={section} items={points} />
-              ))}
-              <InstructionsList title="3. Scoring & Evaluation" items={scoring} />
-              <InstructionsList title="4. Time Limit" items={timeLimit} />
-              <InstructionsList title="5. Important Instructions" items={importantInstructions} />
+    
+      className="bg-primary min-h-screen flex flex-col bg-cover bg-no-repeat"
+      style={{ backgroundImage: `url(${BackgroundImage}) ` }}
+    ><div className="backdrop-blur-sm">
+      
+        <StudentHeader />
+        {/* Main Content Section */}
+        <div className="flex flex-col lg:flex-row justify-center items-center flex-1">
+          {/* Instructions Box */}
+          <div className="bg-center flex justify-center items-center w-full p-6 ">
+            <div className="border-2 hover:shadow-2xl bg-secondary border-slate-600 p-6 rounded-xl lg:w-[720px] shadow-lg ">
+              <div
+                className=" max-h-[70vh] overflow-y-auto [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-50 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300 "
+              >
+                <h2 className="text-5xl font-bold text-white mb-4 mt-14 text-center">
+                  Instructions
+                </h2>
+                <p className="text-gray-300 mb-6 text-lg text-center">
+                  Read the instructions carefully before starting the quiz.
+                </p>
+                {/* Instruction Sections */}
+                <div className="bg-secondary p-8 text-white overflow-y-auto ">
+                  <InstructionsList
+                    title="1. General Guidelines"
+                    items={guidelines}
+                  />
+                  <InstructionsList title="2. Exam Structure" />
+                  {Object.entries(examStructure).map(([section, points], index) => (
+                    <InstructionsList key={index} title={section} items={points} />
+                  ))}
+                  <InstructionsList
+                    title="3. Scoring & Evaluation"
+                    items={scoring}
+                  />
+                  <InstructionsList title="4. Time Limit" items={timeLimit} />
+                  <InstructionsList
+                    title="5. Important Instructions"
+                    items={importantInstructions}
+                  />
+                </div>
+              </div>
             </div>
           </div>
+          {/* Welcome & Timer Section */}
+          <WelcomeTimer name={name} timeLeft={timeLeft} />
         </div>
-
-        {/* Welcome & Timer Section */}
-        <WelcomeTimer name={name} timeLeft={timeLeft} />
-      </div>
-
-      {/* Footer (Always Visible) */}
-      <Footer />
+        {/* Footer (Always Visible) */}
+        <Footer />
+    </div>
     </div>
   );
 };

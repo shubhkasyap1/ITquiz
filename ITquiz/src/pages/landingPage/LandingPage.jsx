@@ -23,11 +23,7 @@ const LandingPage = () => {
                 <p className="subtitle">
                   <span className="headingColor">Quiz Competition💭</span>
                   <br />
-                  <span className="headingColorBold">
-                  Presented By:
-                  </span>
-                   <span className="ansColor">IT🌐 - UTSAV 3.0 🎉</span>
-                  <br />
+                  
                   <span className="headingColorBold">Organised By:</span>
                   <span className="ansColor">Uttaranchal School Of Computing Sciences 🎓</span>
                 </p>

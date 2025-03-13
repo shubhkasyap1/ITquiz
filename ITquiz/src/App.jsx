@@ -7,6 +7,7 @@ import QuizQuestion from "./pages/exam/QuizQuestion";
 import "./App.css";
 import LandingPage from "./pages/landingPage/LandingPage";
 import StudentDashboard from "./pages/StudentDashboard";
+import CodeEditor from "./pages/CodeEditor/CodeEditor";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
       <Route path="/instructions" element={<Instructions />} />
       <Route path="/quiz" element={<QuizQuestion/>}/>
       <Route path="/studentDashboard" element={<StudentDashboard />}/>
+      <Route path= "/codeEditor" element={<CodeEditor />}/>
     </Routes>
   );
 };
