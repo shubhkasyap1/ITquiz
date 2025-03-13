@@ -101,9 +101,9 @@
 
 .containerBox .right {
     width: 30%;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
 }
 
 .containerBox .right .timer_outline {

@@ -44,6 +44,7 @@
     top: 0;
     left: 0;
     background: transparent !important;
+<<<<<<< HEAD
   }
 
   .logo{
@@ -55,6 +56,8 @@
     font-size: 2rem;
     color: #ffffff;
     margin-left: 1rem;
+=======
+>>>>>>> e36a84d9c0b59ca50cf73cd938128c8f308ec89c
   }
   
   .logo img {

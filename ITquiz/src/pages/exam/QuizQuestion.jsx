@@ -77,13 +77,36 @@ function QuizQuestions() {
             </div>
           </div>
 
-          <div className="right">
-            <div className="timer_outline">
+          <div className="right flex flex-col">
+            <div className="timer_outline mb-4">
               <div className="timer">
                 <p>Time Remaining</p>
 
                 <p className="count-down">00:00</p>
               </div>
+            </div>
+
+            <div class="grid grid-cols-4 gap-4 border-2 border-black-400 p-2 rounded">
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">1</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">2</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">3</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">4</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">5</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">6</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">7</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">8</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">9</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">10</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">11</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">12</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">13</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">14</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">15</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">16</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">17</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">18</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">19</p>
+              <p className="bg-gray-200 px-4 py-2 rounded cursor-pointer hover:bg-gray-400 text-center">20</p>
             </div>
           </div>
         </div>
