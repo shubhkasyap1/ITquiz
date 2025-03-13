@@ -6,6 +6,7 @@ import Instructions from "./pages/Instructions";
 import QuizQuestion from "./pages/exam/QuizQuestion";
 import "./App.css";
 import LandingPage from "./pages/landingPage/LandingPage";
+import StudentDashboard from "./pages/StudentDashboard";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/instructions" element={<Instructions />} />
       <Route path="/quiz" element={<QuizQuestion/>}/>
+      <Route path="/studentDashboard" element={<StudentDashboard />}/>
     </Routes>
   );
 };

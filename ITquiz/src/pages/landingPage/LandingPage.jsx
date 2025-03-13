@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '../../components/button.jsx';
 import images from '../../assets/images.jsx';
 import "./LandingPage.css";
-
+import Quizlogo from "../../assets/quizlogo.png";
 const LandingPage = () => {
   return (
 
@@ -10,6 +10,8 @@ const LandingPage = () => {
         <header className="header">
             <div className='logo'>
                 <img src={images.UULogo} alt="" />
+                <h1>x</h1>
+                <img src={images.ITUtsav} alt="" />
             </div>
           </header>
 
@@ -17,7 +19,7 @@ const LandingPage = () => {
           <main className="main-content">
             <div className="row">
               <div className="left">
-                <h1 className="title font6">"प्रश्न ? बाण🏹"</h1>
+                <img src={Quizlogo} alt=""  className="quizLogo"/>
                 <p className="subtitle">
                   <span className="headingColor">Quiz Competition💭</span>
                   <br />
