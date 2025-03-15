@@ -1,16 +1,23 @@
-import React from 'react'
-import Editor from '../../components/Editor/EditorMain';
-import Footer from '../../utils/Footer';
-import Header from '../../components/Header';
+import React from "react";
+import Editor from "../../components/Editor/EditorMain";
+import Footer from "../../utils/Footer";
+import StudentHeader from "../../components/student/StudentHeader";
 
 const CodeEditor = () => {
   return (
-    <div>
-      <Header />
-      <Editor />
-      <Footer />
-    </div>
-  )
-}
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
+      <StudentHeader />
 
-export default CodeEditor
+      {/* Main Content - Takes Remaining Space */}
+      <div className="flex-grow flex">
+        <Editor />
+      </div>
+
+      {/* Footer - Always at Bottom */}
+      <Footer  />
+    </div>
+  );
+};
+
+export default CodeEditor;

@@ -1,19 +1,36 @@
 import { LANGUAGE_VERSIONS } from "../../utils/constants";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const languages = Object.entries(LANGUAGE_VERSIONS);
 const ACTIVE_COLOR = "text-blue-400";
 
 const LanguageSelector = ({ language, onSelect }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [timeLeft, setTimeLeft] = useState(20 * 60); // 20 minutes in seconds
+
+  useEffect(() => {
+    if (timeLeft <= 0) return;
+
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => prev - 1);
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, [timeLeft]);
+
+  const formatTime = (seconds) => {
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+  };
 
   return (
-    <div className="ml-2 mb-4">
-      <p className="mb-2 text-lg">Language:</p>
+    <div className="flex items-center justify-between m-auto  py-2 rounded-md w-full">
+      {/* Language Selector on the Left */}
       <div className="relative">
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="px-4 py-2 bg-gray-800 text-white rounded-md"
+          className="px-4 py-2 bg-gray-700 text-white rounded-md"
         >
           {language}
         </button>
@@ -35,6 +52,11 @@ const LanguageSelector = ({ language, onSelect }) => {
             ))}
           </ul>
         )}
+      </div>
+
+      {/* Timer on the Right */}
+      <div className="text-red-400 font-semibold text-lg">
+        ⏳ {formatTime(timeLeft)}
       </div>
     </div>
   );
