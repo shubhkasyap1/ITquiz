@@ -5,7 +5,7 @@ import Footer from "../../utils/Footer.jsx";
 import Button from "../../components/Button.jsx";
 
 
-const Landingpage = () => {
+const Landingpages = () => {
   const bgImage = {
     width: "100%",
     height:"18rem",
@@ -60,4 +60,4 @@ const Landingpage = () => {
   );
 };
 
-export default Landingpage;
+export default Landingpages;

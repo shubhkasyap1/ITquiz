@@ -22,7 +22,6 @@ const Instructions = () => {
   const navigate = useNavigate();
 
   // Fetch user name on component mount
-
   useEffect(() => {
     const getStudentDetails = async () => {
       try {
@@ -47,7 +46,7 @@ const Instructions = () => {
     }
   }, [timeLeft, isButtonActive]);
 
-  // // Auto-redirect logic if the button is active but not pressed
+  // Auto-redirect logic if the button is active but not pressed
   useEffect(() => {
     if (isButtonActive && !startPressed) {
       const timer = setTimeout(() => {
@@ -65,23 +64,6 @@ const Instructions = () => {
     }
   }, [redirectTimer, isButtonActive, startPressed, navigate]);
 
-  // useEffect(() => {
-  //   if (isButtonActive && !startPressed && redirectTimer > 0) {
-  //     const timer = setTimeout(() => setRedirectTimer((prev) => prev - 1), 1000);
-  //   if (isButtonActive && !startPressed) {
-  //     const timer = setTimeout(() => {
-  //       if (redirectTimer > 0) {
-  //         setRedirectTimer(redirectTimer - 1);
-  //       } else {
-  //         navigate("/quiz/67cd4a6ec579843ef21645d9"); // Redirect if user doesn't press start
-  //       }
-  //     }, 1000);
-  //     return () => clearTimeout(timer);
-  //   } else if (redirectTimer === 0 && isButtonActive && !startPressed) {
-  //     navigate("/quiz");
-  //   }
-  // }, [redirectTimer, isButtonActive, startPressed, navigate]);
-
   const handleStartQuiz = () => {
     setStartPressed(true);
     navigate("/quiz/67cd4a6ec579843ef21645d9");
@@ -89,7 +71,7 @@ const Instructions = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-start via-middle to-end relative overflow-hidden px-0 bg-cover bg-no-repeat w-screen h-screen">
-      <div className="backdrop-blur-sm">
+      <div className="backdrop-blur-sm flex flex-col grow">
         <StudentHeader />
         {/* Main Content Section */}
         <div className="flex flex-col lg:flex-row justify-center items-center flex-1">
@@ -155,10 +137,9 @@ const Instructions = () => {
             </p>
           )}
         </div>
-
-        {/* Footer (Always Visible) */}
-        <Footer />
       </div>
+      {/* Footer (Always Visible) */}
+      <Footer />
     </div>
   );
 };

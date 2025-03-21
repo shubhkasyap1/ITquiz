@@ -38,7 +38,7 @@ export const StudentInstruction = () => {
       }}
     >
       <h2 className="text-3xl font-bold mb-4">Student Instructions</h2>
-      <div className="max-h-96 overflow-y-auto p-4 border rounded-lg shadow-sm backdrop-blur-md bg-white bg-opacity-20 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-50 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300">
+      <div className="max-h-600 overflow-y-auto p-4 border rounded-lg shadow-sm backdrop-blur-md bg-white bg-opacity-20 [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:rounded-full [&::-webkit-scrollbar-track]:bg-gray-50 [&::-webkit-scrollbar-thumb]:rounded-full [&::-webkit-scrollbar-thumb]:bg-gray-200 hover:[&::-webkit-scrollbar-thumb]:bg-gray-300">
         <InstructionsList title="1. General Guidelines" items={guidelines} />
         
         {Object.entries(examStructure).map(([section, points], index) => (
