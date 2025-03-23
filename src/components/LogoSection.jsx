@@ -1,5 +1,5 @@
 import React from "react";
-import UUlogo from "../assets/UUlogo1.png";
+import UUlogo from "../assets/uulogo1.png";
 import images from "../assets/images.jsx";
 
 const LogoSection = () => {
